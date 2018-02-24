@@ -2,7 +2,8 @@ module.exports = {
     book:{
         assets:'./assets',
         js:[
-            'rmlink.js'
+            'rmlink.js',
+            'piwik.js'
         ]
     }
 }
