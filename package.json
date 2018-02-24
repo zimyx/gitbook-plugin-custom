@@ -1,0 +1,33 @@
+{
+  "name": "gitbook-plugin-custom",
+  "version": "0.0.1",
+  "description": "a plugin to remove link 'published with gitbook'",
+  "main": "index.js",
+  "engines": {
+    "gitbook": ">1.x.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gitbook",
+    "gibook-plugin",
+    "plugin"
+  ],
+  "author": "XXX",
+  "license": "ISC",
+  "gitbook": {
+    "properties": {
+      "publisher": {
+        "type": "string",
+        "default": "Zimy",
+        "description": "describe who publish this doc!"
+      },
+      "link": {
+        "type": "string",
+        "default": "http://zbcc.net.cn",
+        "description": "the link when you click"
+      }
+    }
+  }
+}
