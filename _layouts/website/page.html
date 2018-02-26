@@ -3,28 +3,21 @@
 {% block javascript %}
     {{ super() }}
 
-    <script type="text/javascript">
-        var _paq = _paq || [];
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u=(('https:' == document.location.protocol) ? 'https' : 'http') + '://{{ config.pluginsConfig.piwik.URL }}';
-            // Ensure URL ends with slash
-            if (u.slice(-1) !== '/') u+='/';
-            _paq.push(['setTrackerUrl', u+'{{ config.pluginsConfig.piwik.phpPath }}']);
-            _paq.push(['setSiteId', {{ config.pluginsConfig.piwik.siteId }}]);
-            var d=document,
-                g=d.createElement('script'),
-                s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript';
-            g.defer=true;
-            g.async=true;
-            g.src=u+'{{ config.pluginsConfig.piwik.jsPath }}';
-            s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <noscript>
-        <p><img src="http://{{ config.pluginsConfig.piwik.URL }}{{ config.pluginsConfig.piwik.phpPath }}?idsite={{ config.pluginsConfig.piwik.siteId }}"
-                style="border:0;" alt="" /></p>
-    </noscript>
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.book.izbcc.cn"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.izbcc.cn/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+ 
 {% endblock %}
